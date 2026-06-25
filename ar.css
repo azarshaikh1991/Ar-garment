@@ -1,0 +1,350 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+}
+
+/* --- Navbar (Glassmorphism Effect) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.logo img {
+    width: 60px; /* Logo size adjust kiya aapke adidas logo ke liye */
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    opacity: 0.7;
+}
+
+/* Hamburger Menu Icon */
+.menu-toggle {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Container --- */
+#hero-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #FF7043; /* Starting background color (Orange) */
+}
+
+.content {
+    width: 50%;
+    color: white;
+    z-index: 5;
+}
+
+.content h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.buy-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #111;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* --- Image Box & Animations --- */
+.image-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.image-box img {
+    width: 80%;
+    z-index: 2;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+/* Smooth transition scale filter class */
+.image-change {
+    transform: scale(0.7) rotate(-15deg);
+    opacity: 0;
+}
+
+/* Floating Animation */
+.floating {
+    animation: floatAnim 4s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* --- Controls (Dots) --- */
+.controls {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10;
+}
+
+.dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 0 12px;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.dot:hover, .dot.active {
+    transform: scale(1.25);
+}
+
+/* --- Contact Section --- */
+#contact-section {
+    padding: 100px 10%;
+    background: #ffffff;
+    text-align: center;
+}
+
+#contact-section h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+#contact-section p {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    background: #fcfcfc;
+    transition: border-color 0.3s;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: #FF7043;
+}
+
+.submit-btn {
+    padding: 16px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablets (768px and below) */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Hamburger to 'X' animation logic */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    #hero-container {
+        padding: 0 5%;
+    }
+
+    .content h1 {
+        font-size: 3rem;
+    }
+
+    .circle-bg {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* Small Mobiles (400px and below) */
+@media screen and (max-width: 400px) {
+    #hero-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    .content, .image-box {
+        width: 100%;
+    }
+
+    .content {
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .image-box {
+        order: 1;
+        height: 40%;
+    }
+
+    .content h1 {
+        font-size: 2.2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .circle-bg {
+        width: 200px;
+        height: 200px;
+    }
+
+    .buy-btn {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .controls {
+        bottom: 15px;
+    }
+}
